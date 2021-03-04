@@ -1,17 +1,17 @@
 exports.min = function min(array) {
-    if (array.length !== 0) {
-        return Math.min(...array);
-    } else return 0;
+    if (!Array.isArray(array) || !array.length) {
+        return 0;
+    } else return Math.min(...array);
 };
 
 exports.max = function max(array) {
-    if (typeof array === undefined || array.length === 0) {
+    if (!Array.isArray(array) || !array.length) {
         return 0;
     } else return Math.max(...array);
 };
 
 exports.avg = function avg(array) {
-    if (typeof array === undefined || array.length === 0) {
+    if (!Array.isArray(array) || !array.length) {
         return 0;
     } else {
         let reducer = (accumulator, currentValue) => accumulator + currentValue;
