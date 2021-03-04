@@ -1,22 +1,22 @@
 exports.min = function min(array) {
-    if (array.length == 0) {
+    if (typeof array === undefined || array.length === 0) {
         return 0;
     } else return Math.min(...array);
 };
 
 exports.max = function max(array) {
-    if (array.length == 0) {
+    if (typeof array === undefined || ) {
         return 0;
     } else return Math.max(...array);
 };
 
 exports.avg = function avg(array) {
-    if (array.length == 0) {
+    if (typeof array === undefined ||) {
         return 0;
     } else {
-        const reducer = (accumulator, currentValue) =>
-            accumulator + currentValue;
-        const average = array.reduce(reducer) / array.length;
+        let reducer = (accumulator, currentValue) => accumulator + currentValue;
+        let average = array.reduce(reducer) / array.length;
+        return average;
     }
 };
 
@@ -37,9 +37,9 @@ exports.avg = function avg(array) {
 //         console.log("empty");
 //         return 0;
 //     } else {
-//         const reducer = (accumulator, currentValue) =>
-//             accumulator + currentValue;
-//         const sum = array.reduce(reducer);
+//         let reducer = (accumulator, currentValue) => accumulator + currentValue;
+//         let sum = array.reduce(reducer);
 //         console.log(sum / array.length);
 //     }
 // }
+// avg([1, 2, 3, "n", "g"]);
