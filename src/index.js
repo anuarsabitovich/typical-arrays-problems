@@ -5,15 +5,18 @@ exports.min = function min(array) {
 };
 
 exports.max = function max(array) {
-   else return Math.max(...array)
+    if (array.length == 0) {
+        return 0;
+    } else return Math.max(...array);
 };
 
 exports.avg = function avg(array) {
     if (array.length == 0) {
         return 0;
     } else {
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        const average = array.reduce(reducer) /array.length
+        const reducer = (accumulator, currentValue) =>
+            accumulator + currentValue;
+        const average = array.reduce(reducer) / array.length;
     }
 };
 
